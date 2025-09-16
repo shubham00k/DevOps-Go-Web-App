@@ -1,43 +1,55 @@
-# Go Web App - DevOps Project 🚀
+DevOps Go Web App 🚀
 
-This project is a **Go-based web application** (simple HTML frontend) that I fully **DevOps-ified** to demonstrate industry-standard CI/CD workflows and Kubernetes deployment.
+A simple Go-based web application, fully DevOps-ified and production-ready with containerization, orchestration, CI/CD, and monitoring.
 
----
+⚙️ Tech Stack
 
-## ⚡ Project Overview
-- **App**: Go web app serving static HTML.
-- **Containerization**: Multi-stage Docker build for minimal and secure image.
-- **Orchestration**: Kubernetes deployment with Nginx Ingress Controller.
-- **Packaging**: Helm chart for easy installation and management.
-- **CI/CD**:
-  - **CI**: GitHub Actions – automated build, test, and push of Docker images.
-  - **CD**: ArgoCD – GitOps-based continuous deployment to Kubernetes.
-- **Ingress**: Nginx Ingress Controller exposing the app via a domain.
-- **Version Control**: Git + GitHub for code and pipelines.
+Go – simple HTML-based web app
 
----
+Docker – multi-stage builds for lightweight, secure images
 
-## 🛠️ Tech Stack
-- **GoLang** – application backend  
-- **Docker** – containerization  
-- **Kubernetes** – orchestration  
-- **Helm** – package management  
-- **GitHub Actions** – CI pipeline  
-- **ArgoCD** – GitOps & CD  
-- **Nginx Ingress Controller** – external access  
+Kubernetes – app deployed and managed inside a cluster
 
----
+Helm – packaging & deploying manifests
 
-## 🚀 Deployment Workflow
+Nginx Ingress Controller – routing traffic inside the cluster
 
-1. **Developer commits code** → GitHub repo.  
-2. **GitHub Actions CI**:  
-   - Build & test Go app.  
-   - Build Docker image.  
-   - Push image to Docker Hub.  
-3. **ArgoCD CD**:  
-   - Watches GitHub repo for changes in Helm chart/K8s manifests.  
-   - Syncs latest version to Kubernetes cluster.  
-4. **Kubernetes**:  
-   - App runs in pods.  
-   - Exposed via Nginx Ingress Controller.  
+GitHub Actions – CI pipeline for building & pushing images
+
+ArgoCD – GitOps-based CD pipeline for automated K8s deployments
+
+AWS EKS – production-grade cluster setup and deployment
+
+Minikube – local testing and cluster simulation
+
+🚀 Features
+
+Multi-stage Docker build for optimized image size
+
+Helm charts for modular and reusable deployments
+
+Ingress configured for clean routing
+
+GitHub Actions CI pipeline integrated with DockerHub
+
+ArgoCD for automated GitOps deployments
+
+Works both locally (Minikube) and on cloud (EKS)
+
+📦 Deployment
+
+Local (Minikube):
+
+minikube start
+helm install go-web-app ./helm
+minikube service list
+
+
+AWS EKS:
+
+eksctl create cluster --name go-web-cluster --region ap-south-1
+helm install go-web-app ./helm
+kubectl get svc
+
+
+Access the app via the LoadBalancer or Ingress endpoint.
